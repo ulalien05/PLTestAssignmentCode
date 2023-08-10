@@ -27,9 +27,11 @@ public class Solution {
         double average = (double) sum / nums.length;
         Arrays.sort(nums);
         int reference = 0;
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] >= average)
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= average) {
                 reference = Math.abs(average - nums[i - 1]) > Math.abs(average - nums[i]) ? nums[i] : nums [i-1];
+                break;
+            }
         }
         int count = 0;
         Integer[] result = new Integer[nums.length];
